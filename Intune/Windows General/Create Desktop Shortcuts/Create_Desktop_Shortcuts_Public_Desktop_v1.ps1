@@ -31,12 +31,12 @@ foreach ($App in $Shortcuts) {
         if ($isUrl) {
             # Set properties for a web link shortcut
             $Shortcut.TargetPath = $App.TargetPath
-            # Check if Edge is installed before setting the icon
-            $edgePath = "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
-            if (Test-Path -Path $edgePath) {
-                $Shortcut.IconLocation = $edgePath  # Use Edge as the icon for web links
+            # Check if Chrome is installed before setting the icon
+            $chromePath = ""C:\Program Files\Google\Chrome\Application\chrome.exe""
+            if (Test-Path -Path $chromePath) {
+                $Shortcut.IconLocation = $chromePath  # Use Chrome as the icon for web links
             } else {
-                Write-Output "Edge not found. No icon will be set for the web link."
+                Write-Output "Chrome not found. No icon will be set for the web link."
             }
         } else {
             $Shortcut.TargetPath = $App.TargetPath
